@@ -64,14 +64,12 @@ public class PlayerController : MonoBehaviour
 
         UpdateMovement();
 
-        if (runBool && !GameManager.instance.finish)
+        if (!GameManager.instance.finish && runBool)
         {
             rb.MovePosition(new Vector3(xPos, transform.position.y, transform.position.z + moveSpeed * Time.deltaTime));
+            anim.SetBool("run", true);
         }
-        else
-        {
 
-        }
 
         //UpdateMovement();
         //    rb.MovePosition(new Vector3(xPos, transform.position.y, transform.position.z + -moveSpeed * Time.deltaTime));
@@ -92,7 +90,6 @@ public class PlayerController : MonoBehaviour
 
             isClicked = true;
             runBool = true;
-            anim.SetBool("run",true);
         }
         else if (isClicked)
         {

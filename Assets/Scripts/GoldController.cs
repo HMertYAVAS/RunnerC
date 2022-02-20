@@ -30,8 +30,15 @@ public class GoldController : MonoBehaviour
         }
     }
 
+
+
     public void TotalGoldCalculate()
     {
         totalGold = gold + PlayerPrefs.GetInt("totalGold");
+    }
+    
+    public void TotalGoldSet()
+    {
+        PlayerPrefs.SetInt("totalGold",totalGold);
     }
 }

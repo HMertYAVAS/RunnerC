@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -19,4 +20,22 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
+    private void Start()
+    {
+        finish = true;
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(0);
+
+    }
+    
+    public void PlayGame()
+    {
+        FinishController.instance.startPanel.SetActive(false);
+        FinishController.instance.gamePanel.SetActive(true);
+        finish = false;
+    }
+
 }
