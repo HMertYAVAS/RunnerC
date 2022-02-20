@@ -15,6 +15,7 @@ public class ColllectTrig : MonoBehaviour
             GoldController.instance.gold += GoldController.instance.diamondVal;
         }
 
+        GoldUIs.instance.SetUIGameGold();
         this.gameObject.SetActive(false);
     }
 }

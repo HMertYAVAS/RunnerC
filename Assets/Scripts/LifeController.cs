@@ -25,6 +25,7 @@ public class LifeController : MonoBehaviour
     {
         if (playerHeart == 1)
         {
+            playerHeart--;
             FinishController.instance.FailFinish();
         }
         else

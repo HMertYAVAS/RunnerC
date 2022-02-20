@@ -12,6 +12,7 @@ public class FinishController : MonoBehaviour
     public GameObject successPanel;
     public GameObject failPanel;
     public GameObject startPanel;
+    public GameObject GamePanel;
 
 
     private void Awake()
@@ -34,16 +35,25 @@ public class FinishController : MonoBehaviour
         GoldController.instance.TotalGoldCalculate();
         PlayerPrefs.GetInt("totalGold", GoldController.instance.totalGold);
 
-
+        GoldUIs.instance.SetUISuccessGold();
         successPanel.SetActive(true);
+        GamePanel.SetActive(false);
+
+        //animation victory
+        PlayerController.instance.anim.SetBool("victory", true);
     }
 
     public void FailFinish()
     {
         GameManager.instance.finish = true;
         PlayerController.instance.runBool = false;
+        
+        //animation idle
+        PlayerController.instance.anim.SetBool("run", false);
 
+        GoldUIs.instance.SetUIFailGold();
         failPanel.SetActive(true);
+        GamePanel.SetActive(false);
 
     }
 }

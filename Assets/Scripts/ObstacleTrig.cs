@@ -14,6 +14,8 @@ public class ObstacleTrig : MonoBehaviour
         {
             this.gameObject.GetComponent<Collider>().enabled = false;
             LifeController.instance.LifeControl();
+
+            LifeUIs.instance.SetUIGameLife();
         }
     }
 }

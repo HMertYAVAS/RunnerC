@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;
 
     private Rigidbody rb;
+    public Animator anim;
 
     [SerializeField] float limitLeft = 11.6f;
     [SerializeField] float limitRight = 14.7f;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = transform.GetChild(0).GetComponent<Animator>();
 
     }
 
@@ -90,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
             isClicked = true;
             runBool = true;
-
+            anim.SetBool("run",true);
         }
         else if (isClicked)
         {
