@@ -797,7 +797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &260980928
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3253,6 +3253,7 @@ GameObject:
   - component: {fileID: 1116860222}
   - component: {fileID: 1116860226}
   - component: {fileID: 1116860227}
+  - component: {fileID: 1116860228}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3374,6 +3375,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameLife: {fileID: 1638835383}
+--- !u!114 &1116860228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116860221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8207935c1710c4a41aa709d18e7d4a0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelcount: 0
+  levelUIStart: {fileID: 966444433}
+  levelUIGame: {fileID: 1194211833}
 --- !u!1 &1123639642
 GameObject:
   m_ObjectHideFlags: 0
@@ -4198,7 +4214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271783863}
   m_LocalRotation: {x: -0, y: 0.7684077, z: -0, w: -0.6399607}
-  m_LocalPosition: {x: 22.31, y: 15.69, z: 96.62}
+  m_LocalPosition: {x: 20.08, y: 15.69, z: 96.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1826214282}
@@ -5590,7 +5606,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1665156160}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: Retry
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6307,7 +6323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2066157784
 RectTransform:
   m_ObjectHideFlags: 0

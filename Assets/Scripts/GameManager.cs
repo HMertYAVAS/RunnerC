@@ -30,7 +30,15 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
 
     }
-    
+
+    public void NextLevel()
+    {
+        int tempLevel = PlayerPrefs.GetInt("level");
+        PlayerPrefs.SetInt("level",tempLevel+1);
+        SceneManager.LoadScene(0);
+
+    }
+
     public void PlayGame()
     {
         FinishController.instance.startPanel.SetActive(false);
