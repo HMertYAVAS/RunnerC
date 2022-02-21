@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(levelControl());
 
     }
 
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     {
         int tempLevel = PlayerPrefs.GetInt("level");
         PlayerPrefs.SetInt("level", tempLevel + 1);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(levelControl());
 
     }
 
@@ -79,6 +79,12 @@ public class GameManager : MonoBehaviour
             UpgradeUIs.instance.GoldUpgrade();
         }
 
+    }
+
+    int levelControl()
+    {
+        //0,1,2 level
+        return PlayerPrefs.GetInt("level") % 3;
     }
 
 }
