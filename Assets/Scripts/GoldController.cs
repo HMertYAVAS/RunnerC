@@ -30,7 +30,10 @@ public class GoldController : MonoBehaviour
         }
     }
 
-
+    private void Start()
+    {
+        UpgradeGold();
+    }
 
     public void TotalGoldCalculate()
     {
@@ -40,5 +43,11 @@ public class GoldController : MonoBehaviour
     public void TotalGoldSet()
     {
         PlayerPrefs.SetInt("totalGold",totalGold);
+    }
+
+    void UpgradeGold()
+    {
+        diamondVal += PlayerPrefs.GetInt("goldX");
+        diamond5SideVal += PlayerPrefs.GetInt("goldX"); 
     }
 }

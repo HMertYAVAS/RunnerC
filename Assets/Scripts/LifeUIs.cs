@@ -20,11 +20,6 @@ public class LifeUIs : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        SetUIGameLife();
-    }
-
     public void SetUIGameLife()
     {
         gameLife.text = LifeController.instance.playerHeart.ToString();

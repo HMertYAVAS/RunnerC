@@ -20,6 +20,10 @@ public class LifeController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UpgradeHeart();
+    }
 
     public void LifeControl()
     {
@@ -32,6 +36,12 @@ public class LifeController : MonoBehaviour
         {
             playerHeart--;
         }
+    }
+
+    void UpgradeHeart()
+    {
+        playerHeart = PlayerPrefs.GetInt("heart") + PlayerPrefs.GetInt("heartX");
+        LifeUIs.instance.SetUIGameLife();
     }
 
 }

@@ -13,6 +13,7 @@ public class GoldUIs : MonoBehaviour
     public TMP_Text successGold;
     public TMP_Text successTotalGold;
     public TMP_Text gameGold;
+    public TMP_Text startGold;
 
     private void Awake()
     {
@@ -24,6 +25,11 @@ public class GoldUIs : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
+        SetUIStartGold();
     }
 
     public void SetUIFailGold()
@@ -41,5 +47,11 @@ public class GoldUIs : MonoBehaviour
     public void SetUIGameGold()
     {
         gameGold.text = GoldController.instance.gold.ToString();
+    }
+
+    public void SetUIStartGold()
+    {
+        GoldController.instance.TotalGoldCalculate();
+        startGold.text = GoldController.instance.totalGold.ToString();
     }
 }
