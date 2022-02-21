@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleTrig : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {
         if (this.gameObject.CompareTag("Finish"))
@@ -16,6 +17,8 @@ public class ObstacleTrig : MonoBehaviour
             LifeController.instance.LifeControl();
 
             LifeUIs.instance.SetUIGameLife();
+
+            transform.GetChild(0).GetComponent<ParticleSystem>().Play();
         }
     }
 }
